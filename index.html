@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script language="JavaScript">
+  <!--
+
+  function initArray() {
+  this.length = initArray.arguments.length
+  for (var i = 0; i < this.length; i++)
+    this[i+1] = initArray.arguments[i]
+  }
+
+  var hexChars = "0123456789ABCDEF";
+
+  function Dec2Hex (Dec) {
+  var a = Dec % 16;
+  var b = (Dec - a)/16;
+  hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+  return hex;
+  }
+
+  function bgChanger(begin, end, steps) {
+  steps = steps -1 ;
+
+  redA     = begin.charAt(0) + begin.charAt(1);
+  red_valA = parseInt(redA,'16');
+  redB     = end.charAt(0) + end.charAt(1);
+  red_valB = parseInt(redB,'16');
+  red_int  = ((red_valB - red_valA) / steps) * -1;
+  grnA     = begin.charAt(2) + begin.charAt(3);
+  grn_valA = parseInt(grnA,'16');
+  grnB     = end.charAt(2) + end.charAt(3);
+  grn_valB = parseInt(grnB,'16');
+  grn_int  = ((grn_valB - grn_valA) / steps) * -1;
+  bluA     = begin.charAt(4) + begin.charAt(5);
+  blu_valA = parseInt(bluA,'16');
+  bluB     = end.charAt(4) + end.charAt(5);
+  blu_valB = parseInt(bluB,'16');
+  blu_int  = ((blu_valB - blu_valA) / steps) * -1;
+
+  step = 2;
+  red = red_valA;
+  grn = grn_valA;
+  blu = blu_valA;
+
+  document.bgColor = begin;
+
+  while ( steps >= step ) {
+    red -= red_int;
+    red_round = Math.round(red);
+    red_hex = Dec2Hex(red);
+
+    grn -= grn_int;
+    grn_round = Math.round(grn);
+    grn_hex = Dec2Hex(grn);
+
+    blu -= blu_int;
+    blu_round = Math.round(blu);
+    blu_hex = Dec2Hex(blu);
+
+    document.bgColor = red_hex + grn_hex + blu_hex;
+
+    step++;
+  }
+  document.bgColor = end;
+  }
+
+
+  //function ShowOff()
+  //{
+  bgChanger("000000", "000000", 5);
+  bgChanger("000000", "FFFFFF", 15);
+  bgChanger("FFFFFF", "FFFFFF", 15);
+  bgChanger("FFFFFF", "FFDDDD", 20);
+  //}
+
+
+  //--------------------------------
+
+  function preload()
+  {
+  this.length = preload.arguments.length;
+  for (var i = 0; i < this.length; i++)
+  {
+    this[i+1] = new Image();
+    this[i+1].src = preload.arguments[i];
+  }
+  }
+
+
+  if (document.images)
+  {
+  var stuff = new preload
+  (
+    "icons/button1oon.gif",
+    "icons/button2oon.gif",
+    "icons/button3oon.gif",
+    "icons/button4oon.gif",
+    "icons/button5oon.gif",
+    "icons/button6oon.gif",
+    "icons/button7oon.gif",
+    "icons/button8oon.gif"
+  )
+  }
+
+
+  function select(i) 
+  {
+  if (document.images)
+  {
+    var src = document.images[i].src;
+    var off = src.lastIndexOf("off");
+    if (off != -1)
+    {
+      var newsrc = src.substring(0,off) + "oon";
+      document.images[i].src = newsrc + ".gif";
+    }
+  }
+  }
+
+  function deselect(i)
+  {
+  if (document.images)
+  {
+    var src = document.images[i].src;
+    var on = src.lastIndexOf("oon");
+    if (on != -1)
+    {
+      var newsrc = src.substring(0,on) + "off" + src.substring(on + 3, src.length);
+      document.images[i].src = newsrc;
+    }
+  }
+  }
+
+  //-->
+  </script>
+  <title>Lee Ao's Web</title>
+</head>
+<body bgcolor="#FFDDDD" text="black" link="blue" vlink="#7700FF">
+  <center>
+    <img src="sig2.gif" align="center" border="0"><br>
+    <p><br></p>
+    <table border="0" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+        <td>
+          <a href="newbooks.html" target="right" onmouseover="window.status='介紹李敖最近出版的新書 [38 KBytes]';select(1);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(1)"><img src="icons/button5off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="news.html" target="right" onmouseover="window.status='李敖近期內的活動 / 講演 / 節目 [N/A]';select(2);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(2)"><img src="icons/button3off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="lee1.html" target="right" onmouseover="window.status='李敖的生平介紹 / 年表 [17 KBytes]';select(3);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(3)"><img src="icons/button1off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="lee2idx.html" target="right" onmouseover="window.status='李敖從小到大的照片 [8 KBytes]';select(4);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(4)"><img src="icons/button6off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="allbook.html" target="right" onmouseover="window.status='簡介著作等身的李敖的等身著作 [6 KBytes]';select(5);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(5)"><img src="icons/button2off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="lee3.html" target="right" onmouseover="window.status='「李語錄」選 [21 KBytes]';select(6);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(6)"><img src="icons/button7off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td><img src="icons/button4off.gif" border="0"></td>
+      </tr>
+      <tr>
+        <td>
+          <a href="links.html" target="right" onmouseover="window.status='相關網站 [3 KBytes]';select(8);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(8)"><img src="icons/button8off.gif" border="0"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="remarks.html" target="right" onmouseover="window.status='注意事項 / 系統需求 / 感謝 [10 KBytes]';select(9);return true" onmouseout="window.status='請按一個按鈕瀏覽';deselect(9)"><img src="icons/button0off.gif" border="0"></a>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>
